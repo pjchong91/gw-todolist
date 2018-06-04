@@ -3,6 +3,7 @@ import $ from 'jquery';
 import uuid from 'uuid';
 import Projects from './components/projects';
 import AddProject from './components/AddProject';
+import Todos from './components/Todos';
 import './App.css';
 
 class App extends Component {
@@ -88,6 +89,8 @@ class App extends Component {
         <h1> To-Do List </h1>
         <AddProject addProject={this.handleAddProject.bind(this)}/>
           <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
+          <hr />
+          <Todos todos={this.state.todos}/>
       </div>
     );
   }

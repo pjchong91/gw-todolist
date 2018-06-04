@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 class Todos extends Component {
    
-    deleteTodo(id){
-        this.props.onDelete(id)
-    }
 
   render() {
 
     let todoItems;
-    if (this.props.todo){
+    if (this.props.todos){
         todoItems = this.props.todos.map(todo => {
-            // console.log(project);
+            // console.log(todo);
             return (
-            <TodoItem onDelete={this.deleteTodo.bind(this)} key={todo.title} todo ={todo} />
+            <TodoItem key={todo.title} todo ={todo} />
             );
         });
 
@@ -21,7 +18,7 @@ class Todos extends Component {
     }
     return (
       <div className="Todos"> 
-      <h3> Latest Projects </h3>
+      <h3>Todo List</h3>
       {/* you can only have one div at the top level. everything must fit inside this div */}
 
             {todoItems}
